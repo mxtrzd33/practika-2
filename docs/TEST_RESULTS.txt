@@ -1,0 +1,38 @@
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.
+test_dependency_expression (test_apk.ApkTests.test_dependency_expression) ... ok
+test_exact_version (test_apk.ApkTests.test_exact_version) ... ok
+test_missing_package (test_apk.ApkTests.test_missing_package) ... ok
+test_parse_record (test_apk.ApkTests.test_parse_record) ... ok
+test_wrong_version (test_apk.ApkTests.test_wrong_version) ... ok
+test_load_valid_config (test_config.ConfigTests.test_load_valid_config) ... ok
+test_missing_file (test_config.ConfigTests.test_missing_file) ... ok
+test_missing_key (test_config.ConfigTests.test_missing_key) ... ok
+test_wrong_mode_type (test_config.ConfigTests.test_wrong_mode_type) ... ok
+test_bfs_handles_cycle (test_graph.GraphTests.test_bfs_handles_cycle) ... ok
+test_bfs_reaches_transitive_nodes (test_graph.GraphTests.test_bfs_reaches_transitive_nodes) ... ok
+test_build_graph_resolves_known_packages (test_graph.GraphTests.test_build_graph_resolves_known_packages) ... ok
+test_build_graph_resolves_virtual_provides (test_graph.GraphTests.test_build_graph_resolves_virtual_provides) ... ok
+test_filter_excludes_matching_package (test_graph.GraphTests.test_filter_excludes_matching_package) ... ok
+test_missing_start (test_graph.GraphTests.test_missing_start) ... ok
+test_reverse_graph (test_graph.GraphTests.test_reverse_graph) ... ok
+test_reverse_reachability (test_graph.GraphTests.test_reverse_reachability) ... ok
+test_dot_contains_edge (test_render.RenderTests.test_dot_contains_edge) ... ok
+test_dot_contains_isolated_node (test_render.RenderTests.test_dot_contains_isolated_node) ... ok
+test_save_dot (test_render.RenderTests.test_save_dot) ... ok
+test_parse_edges (test_repository.TestRepositoryTests.test_parse_edges) ... ok
+test_reject_duplicate (test_repository.TestRepositoryTests.test_reject_duplicate) ... ok
+test_reject_invalid_name (test_repository.TestRepositoryTests.test_reject_invalid_name) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.006s
+
+OK
