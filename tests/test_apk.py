@@ -9,7 +9,7 @@ class ApkTests(unittest.TestCase):
     """Check metadata parsing, version selection, and dependency tokens."""
 
     def setUp(self):
-        self.index = "P:demo\\nV:1.2-r0\\nD:libc>=1 so:ssl\\n\\n"
+        self.index = "P:demo\nV:1.2-r0\nD:libc>=1 so:ssl\n\n"
 
     def test_parse_record(self):
         packages = parse_index(self.index)

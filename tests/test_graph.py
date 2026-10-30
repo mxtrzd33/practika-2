@@ -57,6 +57,18 @@ class GraphTests(unittest.TestCase):
         }
         self.assertEqual(build_dependency_graph(packages)["app"], ["lib"])
 
+    def test_build_graph_resolves_virtual_provides(self):
+        packages = {
+            "app": {"dependencies": ["so:ssl"], "provides": []},
+            "ssl-lib": {
+                "dependencies": [],
+                "provides": ["so:ssl=3.0"],
+            },
+        }
+        self.assertEqual(
+            build_dependency_graph(packages)["app"], ["ssl-lib"]
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
