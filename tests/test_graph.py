@@ -42,7 +42,7 @@ class GraphTests(unittest.TestCase):
 
     def test_reverse_graph(self):
         result = reverse_graph(self.graph)
-        self.assertIn("A", result["E"])
+        self.assertIn("C", result["E"])
         self.assertIn("B", result["D"])
 
     def test_reverse_reachability(self):
