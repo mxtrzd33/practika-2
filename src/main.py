@@ -5,7 +5,8 @@ import sys
 
 from src.apk import download_index, find_package, parse_index
 from src.config import load_config, print_config
-from src.graph import build_dependency_graph, recursive_bfs, reachable_reverse
+from src.graph import build_dependency_graph, recursive_bfs
+from src.reverse_dependencies import reachable_reverse
 from src.render import render_image, save_dot
 from src.test_repository import load_test_repository
 

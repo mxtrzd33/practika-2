@@ -4,10 +4,11 @@ import unittest
 
 from src.graph import (
     build_dependency_graph,
-    reachable_reverse,
     recursive_bfs,
-    reverse_graph,
 )
+
+
+from src.reverse_dependencies import reachable_reverse, reverse_graph
 
 
 class GraphTests(unittest.TestCase):
