@@ -1,0 +1,8 @@
+package_name: "A"
+repository_url: ""
+test_repository: true
+package_version: "1.0"
+filter_substring: ""
+test_repository_path: "test_data/repository.txt"
+output_dir: "output"
+graph_format: "png"
