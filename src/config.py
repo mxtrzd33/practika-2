@@ -83,7 +83,9 @@ def load_config(path: str) -> AppConfig:
     _validate_values(data)
     if data["graph_format"] not in ("png", "svg"):
         raise ValueError("graph_format must be png or svg")
-    return AppConfig(**{key: data[key] for key in AppConfig.__dataclass_fields__})
+    fields = AppConfig.__dataclass_fields__
+    values = {key: data[key] for key in fields}
+    return AppConfig(**values)
 
 
 def print_config(config: AppConfig) -> None:
