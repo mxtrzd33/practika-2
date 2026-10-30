@@ -1,0 +1,8 @@
+# Package: comma-separated direct dependencies
+A:B,C
+B:D
+C:D,E
+D:
+E:A
+F:G
+G:
