@@ -13,7 +13,7 @@ repository_url: ""
 test_repository: true
 package_version: "1"
 filter_substring: ""
-test_repository_path: "{repo}"
+test_repository_path: '{repo}'
 """
 
 
@@ -25,7 +25,7 @@ class ConfigTests(unittest.TestCase):
             repo = Path(folder) / "repo.txt"
             repo.write_text("A:\\n", encoding="utf-8")
             config = Path(folder) / "config.yaml"
-            config.write_text(VALID.format(repo=repo), encoding="utf-8")
+            config.write_text(VALID.format(repo=repo.as_posix()),encoding="utf-8",)
             self.assertEqual(load_config(str(config)).package_name, "A")
 
     def test_missing_file(self):
@@ -44,7 +44,7 @@ class ConfigTests(unittest.TestCase):
             repo = Path(folder) / "repo.txt"
             repo.write_text("A:\\n", encoding="utf-8")
             path = Path(folder) / "config.yaml"
-            text = VALID.format(repo=repo).replace("true", '"true"')
+            text = VALID.format(repo=repo.as_posix()).replace("true", '"true"')            
             path.write_text(text, encoding="utf-8")
             with self.assertRaises(TypeError):
                 load_config(str(path))

@@ -57,28 +57,31 @@ def run_analysis(config, args):
     """Run dependency analysis, reverse analysis, and visualization."""
     package = args.package or config.package_name
     graph, selected = load_graph(config)
-    if not config.test_repository:
-        if selected is None:
-            raise RuntimeError("Selected APK package metadata is unavailable")
-        show_direct(package, graph)
-    else:
-        show_direct(package, graph)
+
+    if not config.test_repository and selected is None:
+        raise RuntimeError("Selected APK package metadata is unavailable")
+
+    show_direct(package, graph)
+
     if args.direct_only:
         return
+
     if args.reverse:
         result = reachable_reverse(graph, package)
-        show_graph(result)
-        return
-    result = recursive_bfs(graph, package, config.filter_substring)
+    else:
+        result = recursive_bfs(
+            graph, package, config.filter_substring
+        )
+
     show_graph(result)
     dot_path = save_dot(result, config.output_dir)
     print(f"DOT file: {dot_path}")
+
     if not args.dot_only:
         image_path = render_image(
             dot_path, config.output_dir, config.graph_format
         )
         print(f"Image: {image_path}")
-
 
 def main():
     """Load configuration and execute the requested CLI operation."""
