@@ -1,0 +1,5 @@
+digraph dependencies {
+  rankdir=LR;
+  "curl" -> "musl";
+  "musl";
+}

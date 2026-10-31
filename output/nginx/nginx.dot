@@ -1,0 +1,17 @@
+digraph dependencies {
+  rankdir=LR;
+  "busybox" -> "musl";
+  "busybox-binsh" -> "busybox";
+  "libcrypto3" -> "musl";
+  "libssl3" -> "libcrypto3";
+  "libssl3" -> "musl";
+  "musl";
+  "nginx" -> "busybox-binsh";
+  "nginx" -> "libcrypto3";
+  "nginx" -> "libssl3";
+  "nginx" -> "musl";
+  "nginx" -> "pcre2";
+  "nginx" -> "zlib";
+  "pcre2" -> "musl";
+  "zlib" -> "musl";
+}

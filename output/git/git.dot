@@ -1,0 +1,37 @@
+digraph dependencies {
+  rankdir=LR;
+  "brotli-libs" -> "musl";
+  "c-ares" -> "musl";
+  "ca-certificates-bundle";
+  "git" -> "libcurl";
+  "git" -> "libexpat";
+  "git" -> "musl";
+  "git" -> "pcre2";
+  "git" -> "zlib";
+  "libcrypto3" -> "musl";
+  "libcurl" -> "brotli-libs";
+  "libcurl" -> "c-ares";
+  "libcurl" -> "ca-certificates-bundle";
+  "libcurl" -> "libcrypto3";
+  "libcurl" -> "libidn2";
+  "libcurl" -> "libpsl";
+  "libcurl" -> "libssl3";
+  "libcurl" -> "musl";
+  "libcurl" -> "nghttp2-libs";
+  "libcurl" -> "zlib";
+  "libcurl" -> "zstd-libs";
+  "libexpat" -> "musl";
+  "libidn2" -> "libunistring";
+  "libidn2" -> "musl";
+  "libpsl" -> "libidn2";
+  "libpsl" -> "libunistring";
+  "libpsl" -> "musl";
+  "libssl3" -> "libcrypto3";
+  "libssl3" -> "musl";
+  "libunistring" -> "musl";
+  "musl";
+  "nghttp2-libs" -> "musl";
+  "pcre2" -> "musl";
+  "zlib" -> "musl";
+  "zstd-libs" -> "musl";
+}

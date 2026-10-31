@@ -1,0 +1,27 @@
+digraph dependencies {
+  rankdir=LR;
+  "bind" -> "bind-dbg";
+  "bind" -> "bind-dev";
+  "bind" -> "bind-plugins";
+  "bind-dbg";
+  "bind-dev";
+  "bind-dnssec-tools" -> "bind-dbg";
+  "bind-plugins" -> "bind-dbg";
+  "bind-plugins" -> "bind-dev";
+  "curl" -> "curl-dbg";
+  "curl" -> "dns-root-hints";
+  "curl" -> "dpaste";
+  "curl" -> "ix";
+  "curl" -> "libmaxminddb";
+  "curl" -> "spamassassin";
+  "curl" -> "tpaste";
+  "curl-dbg";
+  "dns-root-hints" -> "bind";
+  "dns-root-hints" -> "bind-dbg";
+  "dns-root-hints" -> "bind-dnssec-tools";
+  "dpaste";
+  "ix";
+  "libmaxminddb";
+  "spamassassin";
+  "tpaste";
+}
